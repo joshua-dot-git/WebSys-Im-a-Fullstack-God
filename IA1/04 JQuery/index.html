@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQueryIntergration</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+
+        <Style>
+            #secret {
+                display: none;
+            }
+
+            .highlight {
+                background-color: lightslategrey;
+                font-weight: bold;
+                padding: 10px;
+            }
+
+            .recla {
+                background-color: lightsteelblue;
+                font-weight: bold;
+                padding: 10px;
+            }
+
+            .togcla {
+                background-color: lightsteelblue;
+                font-weight: bold;
+                padding: 10px;
+            }
+
+            #pandown {
+                width: 200px;
+                height: 0;
+                color: white;
+                background-color: rgb(20, 20, 20);
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: height 0.5s ease;
+            }
+
+
+        </Style>
+
+    </head>
+
+    <body>
+        <p><b>Exercise 1: Changing Text of an Element.</b></p>
+        <p id="greeting">Something here!</p>
+
+        <script>
+            $(document).ready(function(){
+                $("#greeting").text("Hello, Im using jQuery and i've changed the text.");
+            }); 
+        </script>
+
+        <p><b>Exercise 2: Changing Background Color</b></p>
+
+        <div id="box" style="width: 200px; height: 100px; align-content: center; padding: 6px;">This is a box.</div>
+
+        <script>
+            $(document).ready(function() {
+                $("#box").css("background-color", "lightgray");
+            });
+
+        </script>
+
+        <p><b>Exercise 3: Hiding an Element</b></p>
+        <p id="hiding">This is a paragraph. Click button to hide.</p>
+        <button id="btn">Click me</button>
+        <button id="btns">Click me too!</button>
+
+        <script>
+            $("#btn").click(function(){ 
+                $("#hiding").hide(); 
+            }); 
+
+            $("#btns").click(function(){ 
+                $("#hiding").show(); 
+            }); 
+        </script>
+
+        <p><b>Exercise 4: Showing an Element.</b></p>
+        <p id="secret">surprise?!</p>
+        <button id="showbtn">unlock</button>
+
+        <script>
+            $("#showbtn").click(function(){ 
+                $("#secret").show(); 
+            }); 
+        </script>
+
+        <p><b>Exercise 5: Toggling Visibility</b></p>
+        <p id="togel">Togol togel :D</p>
+        <button id="togelbtn">Togel Btn</button>
+
+        <script>
+            $("#togelbtn").click(function(){ 
+                $("#togel").toggle(); 
+            }); 
+        </script>
+
+        <p><b>Exercise 6: Adding a class.</b></p>
+        <p id="adcla">This is a class! What is a class...?</p>
+        <button id="adclabtn">Highlight Text</button>
+
+        <script>
+            $("#adclabtn").click(function(){ 
+                $("#adcla").addClass("highlight");
+            }); 
+        </script>
+
+        <p><b>Exercise 7: Removing a class.</b></p>
+        <p class="recla" id="recla">This is not a class??</p>
+        <button id="reclabtn">Remove Style</button>
+
+        <script>
+            $("#reclabtn").click(function(){ 
+                $("#recla").removeClass("recla");
+            }); 
+        </script>
+
+        <p><b>Exercise 8: Toggling a class</b></p>
+        <p id="togcla">This class..I feel it!!</p>
+        <button id="togbtn">Toggle Style</button>
+        
+        <script>
+            $("#togbtn").click(function(){ 
+                $("#togcla").toggleClass("togcla");
+            }); 
+        </script>
+
+        <p><b>Exercise 9: Changing Image Source</b></p>
+        <img id="myImg" src="img/sleeping.jpg" alt="clen.jpg" width="200">
+        <button id="changeimg">Change Image</button>
+
+        <script>
+            $("#changeimg").click(function(){ 
+                $("#myImg").attr("src", "img/clen.jpg");
+            }); 
+        </script>
+
+        <p><b>Exercise 10: Getting input value</b></p>
+        <input type="text" id="name" placeholder="Type your name here?">
+        <button id="getValBtn">Get Value</button>
+
+        <script>
+            $("#getValBtn").click(function() {
+                let val = $("#name").val();
+                console.log(val);
+                alert("You typed: " + val);
+
+            });
+        </script>
+
+        <p><b>Exercise 11: Setting input value</b></p>
+        <input type="text" id="nema" placeholder="Type Here Bro!">
+        <button id="setValBtn">Set Value</button>
+
+        <script>
+            $("#setValBtn").click(function() {
+                $("#nema").val("This is John Doe Dayo!");
+            });
+        </script>
+
+        <p><b>Exercise 12: Appending Content</b></p>
+        <p id="apcon">This is the end of the text.</p>
+        <button id="appendBtn">Append Text</button>
+        
+        <script>
+            $("#appendBtn").click(function() {
+                $("#apcon").append(" This is new text!");;
+            });
+        </script> 
+
+        <p><b>Exercise 13: Prepending Content</b></p>
+        <p id="prepcon">I dont know what to put lol</p>
+        <button id="prependBtn">Prepend Button</button>
+
+        <script>
+            $("#prependBtn").click(function() {
+                $("#prepcon").prepend("Initialize ");
+            });
+            
+        </script>
+
+        <p><b>Exercise 14: Fade out Element</b></p>
+        <div id="boxout" style="width: 200px; height: 100px; background-color: gainsboro; 
+        display: flex; align-items: center; justify-content: center;">This is a box.</div>
+        <button id="fadeBtn" style="padding: 6px;">Dissapear Button</button>
+
+        <script>
+            $("#fadeBtn").click(function() {
+                $("#boxout").fadeOut();
+            });
+        </script>
+
+        <p><b>Exercise 15: Fade in Element</b></p>
+        <div id="boxein" style="width: 200px; height: 100px; background-color: darkgrey; display: none;
+        align-items: center; justify-content: center;">Bulaga!!</div>
+        <button id="fedaBtn" style="padding: 6px;">Magic Button</button>
+
+        <script>
+            $("#fedaBtn").click(function() {
+                $("#boxein").css("display", "flex").hide().fadeIn();
+            });
+        </script>
+
+        <p><b>Exercise 16: Slide Up</b></p>
+        <div id="panel" style="width: 200px; height: 100px; background-color: gray; overflow: hidden;
+        transition: max-height 0.5s ease-out; max-height: 200px; display: flex; align-items: center; justify-content: center;">
+        Peace Out!</div>
+        <button id="slideBtn" style="padding: 8px;">Press Me</button>
+
+        <script>
+            $("#slideBtn").click(function() {
+             $("#panel").slideUp();
+            });
+        </script>
+
+        <p><b>Exercise 17: Slide Down</b></p>
+        <div id="pandown">Peace In!?</div>
+        <button id="SlideDBtn" style="padding: 8px;">Press Me</button>
+
+        <script>
+            $("#SlideDBtn").click(function() {
+                $("#pandown").css("height", "100px");
+            });
+        </script>
+
+        <p><b>Exercise 18: Change Multiple CSS Properties</b></p>
+        <p id="demo18">Her an angel; something rose!</p>
+        <button id="multiStyleBtn">Apply Styles</button>
+
+        <script>
+            $("#multiStyleBtn").click(function() {
+                $("#demo18").css({
+                    "color": "white",
+                    "background-color": "black",
+                    "padding": "10px",
+                    "border-radius": "5px"
+                });
+            });
+        </script>
+
+        <p><b>Exercise 19: Mouseover Event</b></p>
+        <p id="demo19">Hover over me!</p>
+
+        <script>
+            $("#demo19").mouseover(function() {
+                $(this).css("color", "red");
+            });
+        </script>
+
+        <p><b>Exercise 20: Click Event to Change Text</b></p>
+        <p id="demo20">Click me to change my text!</p>
+
+        <script>
+            $("#demo20").click(function() {
+                $(this).text("You clicked me! 0.0");
+            });
+        </script>
+
+    </body>
+</html>

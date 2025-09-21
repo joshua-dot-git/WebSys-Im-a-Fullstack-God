@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <style>
+            .banner {
+                text-align: center;
+            }
+        </style>
+
+        <body>
+            <div class="banner">
+                <h1>Simple Login Form</h1>
+            </div>
+        </body>
+    </head>
+
+    <br>
+    
+    <body>
+
+        <p><b>Exercise</b> 1</p>
+        <br>
+        <p>
+            <form action="">
+
+                <label for="">Username</label>
+                <input type="text" name="username">
+
+                <label for="">Password</label>
+                <input type="text" name="password">
+
+                <button type="submit">Login</button>
+
+            </form>
+        </p>
+
+        <br>
+        <br>
+        <p><b>Exercise 2:</b></p>
+        <br>
+
+        <form>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username">
+
+            <label for="password">Password</label>
+            <input type="text" id="password" name="password">
+
+            <button type="submit">Login</button>
+        </form>
+
+        <br>
+        <br>
+        <p><b>Exercise 3:</b></p>
+        <br>
+
+        <form>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password">
+
+            <button type="submit">Login</button>
+        </form>
+
+        <br>
+        <br>
+        <p><b>Exercise 4:</b></p>
+        <br>
+
+        <div class="Login">
+            <form>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username">
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <br>
+        <br>
+        <p><b>Exercise 5: Styling w/ CSS</b></p>
+        <p><b>Exercise 6: Styling Button</b></p>
+        <p><b>Exercise 7: Centering Login Box</b></p>
+        <br>
+
+        <style>
+            input {
+                display: block;
+                width: 100%;
+                padding: 8px;
+                margin: 8px;
+            }
+
+            button {
+                background-color: blue;
+                color: white;
+                padding: 10px;
+                width: 100%;
+                border: none;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: darkblue;
+            }
+            
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 100vh;
+                background-color: #f2f2f2;
+            }
+            
+
+            .login-box {
+                width: 300px;
+                padding: 40px;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+            }
+
+        </style>
+
+        <br>
+        <p><b>Exercise 8:</b></p>
+
+        <p>
+            <div class="login-box" style="text-align: center;">
+                <h2>Login</h2>
+                <form>
+                    <p>i can't figure out why it's not centering; maybe its because i wrote it in one file and some of the codes are colliding.</p>
+                    <p>fixed it.</p>
+                </form>
+            </div>
+
+            <style>
+                .login-box h2 {
+                text-align: center;
+                margin-bottom: 20px;
+                }
+            </style>
+        </p>
+        
+
+        <br>
+        <br>
+        <p><b>Exercise 9:</b></p>
+        <p>
+            <div class="login-box">
+                <h2>Login</h2>
+                <form>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username">
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+
+                    <label>
+                    <input type="checkbox" name="remember">Remember Me
+                    </label>
+            </form>
+            </div>
+        <p>
+            
+        <br>
+        <br>
+        <p><b>Exercise 10: Forgot Password</b></p>
+
+        <div class="login-box">
+            <h2>Login</h2>
+            <form>
+                <label for="username">Username:</label> 
+                <input type="text" id="username" name="username" placeholder="Enter your username"> 
+ 
+                <label for="password">Password:</label> 
+                <input type="password" id="password" name="password" placeholder="Enter your password"> 
+ 
+                <label> 
+                <input type="checkbox" name="remember"> Remember Me 
+                </label> 
+ 
+                <button type="submit">Login</button> 
+                <p style="text-align:center; margin-top:10px;"> 
+                <a href="#">Forgot Password?</a> 
+            </form>
+        </div>
+    </body>
+</html>

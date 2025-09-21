@@ -1,0 +1,192 @@
+h1 {
+    color : darkolivegreen;
+    padding: 8px;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+}
+
+h2 {
+    text-align: center;
+}
+
+body {
+    background-color: lightgray;
+}
+
+h3 {
+    text-transform: uppercase;
+}
+
+p {
+    line-height: 1.6;
+    text-align: center;
+}
+
+a {
+    color: darkred;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: square;
+}
+
+ol {
+    list-style-type: upper-roman;
+}
+
+li {
+    margin: 5px;
+}
+
+table {
+    border: 1px solid black;
+}
+
+td {
+    padding: 10px;
+}
+
+img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+button {
+    background-color: darkolivegreen;
+    color: white;
+    padding: 8px;
+}
+
+form {
+    border: 1px solid gray;
+    padding: 15px;
+}
+
+input {
+    border: 2px solid black;
+}
+
+textarea {
+    width: 300px;
+    height: 100px;
+}
+
+audio {
+    width: 250px;
+}
+
+video {
+    border: 3px solid black;
+}
+
+/* ID Selectors */
+
+#main-title {
+    color: darkred;
+    font-size: 30px;
+}
+
+#intro-text {
+    font-style: italic;
+}
+
+#student-table {
+    border-collapse: collapse;
+}
+
+#profile-pic {
+    border-radius: 50%;
+}
+
+#submit-btn {
+    background-color: darkorange;
+    padding: 10px;
+}
+
+#container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #eee;
+}
+
+#email-field {
+    border: 1px solid darkred;
+}
+
+#home-link {
+    color: darkviolet;
+}
+
+#login-form {
+    background: #f9f9f9;
+    padding: 15px;
+}
+
+#footer-text {
+    text-align: right;
+}
+
+/* Class Selectors*/
+
+.paragraph {
+    font-family: Arial, sans-serif;
+}
+
+.title  {
+    color: navy;
+}
+
+.btn    {
+    background-color: teal;
+    color: white;
+}
+
+.rounded-img {
+    border-radius: 15px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.nav-link {
+    color: darkgreen;
+    margin-right: 15px;
+}
+
+.list-item {
+    font-weight: bold;
+}
+
+.input-field {
+    border: 2px solid gray;
+    padding: 5px;
+}
+
+.footer-note {
+    font-size: 12px;
+    color: gray;
+}
+
+blockquote {
+    text-align: center;
+}
+
+address {
+    text-align: center;
+}
+
+.bar {
+    display: block;
+    margin: 0 auto;
+}
