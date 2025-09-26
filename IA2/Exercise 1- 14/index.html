@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Fantasy Form Alpha</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    </head>
+
+    <body>
+        <style>
+            .error {
+                border: 2px solid red;
+            }
+        </style>
+
+        <form id="myForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required minlength="3" maxlength="10"><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="button" id="toggle">Show/Hide</button><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your Email" required><br><br>
+            
+            <button type="submit">Login</button>
+
+            <p>Choose your class:</p>
+            <input type="radio" id="warrior" name="class" value="warrior">
+            <label for="warrior" >Warrior</label>
+            <input type="radio" id="rogue" name="class" value="rogue">
+            <label for="rogue">Rogue</label>
+            <input type="radio" id="mage" name="class" value="mage">
+            <label for="mage">Mage</label>
+            <input type="radio" id="healer" name="class" value="healer">
+            <label for="healer">Healer</label>
+
+            <p>Select your Skills <b>(Extra)</b>:</p>
+            <input type="checkbox" name="skills" id="extra" value="timestop">
+            <label for="timestop">TimeStop</label><br><br>
+            <input type="checkbox" name="skills" id="extra" value="invisibility">
+            <label for="invisibility">Invisibility</label><br><br>
+            <input type="checkbox" name="skills" id="extra" value="superstrength">
+            <label for="superstrength">SuperStrength</label><br><br>
+
+            <p>Select Spawn point.</p>
+            <label for="spawnpoint">Spawnpoint:</label>
+            <select name="spawnpoint" id="spawnpoint">
+                <option value="frsh">Firelink Shrine</option>
+                <option value="ub">Undead Burg</option>
+                <option value="ff">Fifth Fleet: Astera</option>
+                <option value="af">Ancient Forest</option>
+                <option value="er">Elder's Recess</option>
+            </select>
+
+            <br><br>
+            <label for="desc">Write a profile description</label><br>
+            <textarea name="desc" id="desc" rows="5" cols="50"></textarea>
+            <p id="count">0/100</p>
+
+             <!-- Native JS
+            <script>
+                    document.getElementById("myForm").addEventListener("submit", function(event) {
+                        event.preventDefault();
+                        alert("Form submitted!");
+                    });
+
+                    const desc = document.getElementById("desc");
+                    const count = document.getElementById("count");
+
+                    desc.addEventListener("input", function(){
+                        count.textContent = desc.value.length + "/100"
+                    });
+
+                    function togglepassword() {
+                        const password = document.getElementById("password");
+                        password.type = password.type === "password" ? "text" : "password";
+                    }
+                    
+                </script>-->
+
+            <script>
+                $("myForm").submit(function(event){
+                    event.preventDefault();
+                    alert("Form submitted with jQuery!");
+                })
+
+                $("#toggle").click(function(){
+                    let password = $("#password");
+                    password.attr("type", password.attr("type") === "password" ? "text" : "password");
+                })
+
+                $("#desc").on("input", function(){
+                    $("#count").text($(this).val().length + "/100")
+                })
+                
+                $("#myForm").submit(function(e){
+                    e.preventDefault();
+                    if($("#username").val() === "") {
+                        $("#username").addClass("error");
+                    } else {
+                        $("#name").removeClass("error");
+                        alert("Form Submitted! XD");
+                    }
+                });
+
+                $("#login").submit(function(e) {
+                e.preventDefault();
+                if ($("#username").val() === "" || $("#password").val() === "") {
+                    alert("Please fill in all fields");
+                } else {
+                    alert("Login successful!");
+                }
+                });
+
+            </script>
+        </form>
+
+        <!--some of these codes don't work since lines are colliding lol-->
+
+    </body>
+</html>

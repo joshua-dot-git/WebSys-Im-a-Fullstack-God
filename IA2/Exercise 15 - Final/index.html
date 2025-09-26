@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Adventurer Registration Form</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <style>
+
+            h2{
+                color: rgb(34, 33, 33);
+                display: flex;
+                justify-content: center;
+            }
+
+            body {
+                background-color: #ffffff;
+                color: #e0e0e0;
+                font-family: 'Times New Roman', Times, serif;
+                padding: 10px;
+            }
+
+            form {
+                max-width: 600px;
+                margin: auto;
+                background-color: #2b2b2b;
+                padding: 20px;
+                border-radius: 6px;
+                border: 3px solid #222222;
+            }
+
+            label, p {
+                display: inline-block;
+                padding: 5px;
+            }
+
+
+            input, select, textarea, button {
+                width: 100%;
+                padding: 8px;
+                margin-top: 5px;
+                background-color: #444;
+                color: #f0f0f0;
+                border: 1px solid #555;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type="radio"], input[type="checkbox"] {
+                width: auto;
+                margin-right: 5px;
+            }
+
+            button {
+                background-color: #6e6e6e;
+                cursor: pointer;
+                transition: background-color 0.2s;
+            }
+
+            button:hover {
+                background-color: #6a6a6a;
+            }
+
+            .error {
+                border: 1px solid red;
+            }
+
+            #count {
+                font-size: 0.9em;
+                color: #bbb;
+                text-align: right;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h2>Become an Adventurer :D</h2>
+        <form id="myForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required minlength="3" maxlength="10">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="button" id="toggle">Show/Hide</button>
+
+            <label for="confirm">Confirm Password:</label>
+            <input type="password" id="confirm" name="confirm" required>
+
+            <p>Choose your gender:</p>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+
+            <p>Choose your class:</p>
+            <input type="radio" id="warrior" name="class" value="warrior">
+            <label for="warrior">Warrior</label>
+            <input type="radio" id="rogue" name="class" value="rogue">
+            <label for="rogue">Rogue</label>
+            <input type="radio" id="mage" name="class" value="mage">
+            <label for="mage">Mage</label>
+            <input type="radio" id="healer" name="class" value="healer">
+            <label for="healer">Healer</label><br>
+
+            <p>Select your skills (<b>extra</b>):</p>
+            <input type="checkbox" name="skills" value="timestop" id="timestop">
+            <label for="timestop">TimeStop</label>
+            <input type="checkbox" name="skills" value="invisibility" id="invisibility">
+            <label for="invisibility">Invisibility</label>
+            <input type="checkbox" name="skills" value="superstrength" id="superstrength">
+            <label for="superstrength">SuperStrength</label><br>
+
+            <label for="spawnpoint">Spawnpoint:</label>
+            <select name="spawnpoint" id="spawnpoint">
+                <option value="frsh">Firelink Shrine</option>
+                <option value="ub">Undead Burg</option>
+                <option value="ff">Fifth Fleet: Astera</option>
+                <option value="af">Ancient Forest</option>
+                <option value="er">Elder's Recess</option>
+            </select>
+
+            <label for="desc">Profile Description:</label>
+            <textarea name="desc" id="desc" rows="5" cols="50" maxlength="100"></textarea>
+            <p id="count">0/100</p>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <script>
+            $(document).ready(function() {
+                $("#toggle").click(function() {
+                    const pass = $("#password");
+                    pass.attr("type", pass.attr("type") === "password" ? "text" : "password");
+                });
+
+                $("#desc").on("input", function() {
+                    $("#count").text($(this).val().length + "/100");
+                });
+
+                $("#myForm").submit(function(e) {
+                    e.preventDefault();
+                    let valid = true;
+
+                    $("#username, #email, #password, #confirm").each(function() {
+                        if ($(this).val() === "") {
+                            $(this).addClass("error");
+                            valid = false;
+                        } else {
+                            $(this).removeClass("error");
+                        }
+                    });
+
+                    if ($("#password").val() !== $("#confirm").val()) {
+                        $("#confirm").addClass("error");
+                        alert("Passwords do not match!");
+                        valid = false;
+                    }
+
+                    if (valid) {
+                        alert("Registration successful!");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
